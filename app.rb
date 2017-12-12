@@ -23,7 +23,7 @@ DataMapper.finalize
 Post.auto_upgrade!
 
 get '/' do
-  @posts = Post.all
+  @posts = Post.all.reverse #[1번포스트객체, 2번포스트객체, ...]
   erb :index
 end
 
@@ -32,4 +32,5 @@ get '/abap' do
     :title => params["title"],
     :body => params["content"]
   )
+  redirect to '/'
 end
