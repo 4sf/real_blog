@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Real Blog</title>
+  </head>
+  <body>
+    <h1>Welcome to Real Blog!</h1>
+
+    <% @posts.each do |post| %>
+      <p>제목 : <%= post.title %></p>
+      <p>내용 : <%= post.body %></p>
+    <% end %>
+
+    <form action="/abap">
+      제목 : <input type="text" name="title">
+      내용 : <input type="text" name="content">
+      <input type="submit">
+    </form>
+  </body>
+</html>
